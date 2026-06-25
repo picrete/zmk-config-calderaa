@@ -3,6 +3,15 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        combo_esdf {
+            bindings = <&tog 1>;
+            key-positions = <0 48 53>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -19,7 +28,17 @@
 &kp TAB    &kp Q   &kp W      &kp E         &kp R             &kp T        &kp Y      &kp U   &kp I      &kp O     &kp P     &kp BSLH
 &kp CAPS   &kp A   &kp S      &kp D         &kp F             &kp G        &kp H      &kp J   &kp K      &kp L     &kp SEMI  &kp RET
 &kp LSHFT  &kp Z   &kp X      &kp C         &kp V             &kp B        &kp N      &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp APOS
-&mo 3      &mo 2   &kp LCTRL  &kp LEFT_ALT  &kp LEFT_COMMAND  &kp SPACE    &kp SPACE  &mo 1   &kp LEFT   &kp DOWN  &kp UP    &kp RIGHT
+&mo 4      &mo 3   &kp LCTRL  &kp LEFT_ALT  &kp LEFT_COMMAND  &kp SPACE    &kp SPACE  &mo 2   &kp LEFT   &kp DOWN  &kp UP    &kp RIGHT
+            >;
+        };
+
+        wasd_to_esdf {
+            bindings = <
+&trans  &trans     &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp TAB    &kp Q   &kp W   &kp E   &kp R     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp CAPS   &kp A   &kp S   &kp D   &kp F     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LSHFT  &kp Z   &kp X   &kp C   &kp V     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
